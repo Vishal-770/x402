@@ -1,0 +1,9 @@
+{
+	"servers": {
+		"third-web-mcp": {
+			"url": "https://api.thirdweb.com/mcp?secretKey=aZ-XNYnB7aT-KkgpKZN9U0dVKChaDzmGVJ4REp0qud7PwHvWPfeZhBkLPLcBKvEMDfvpC5cVzqc2usQ0SWPQqA",
+			"type": "http"
+		}
+	},
+	"inputs": []
+}
