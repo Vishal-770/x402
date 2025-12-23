@@ -5,11 +5,7 @@ import { useState } from "react";
 import client from "./client";
 import { Button } from "@/components/ui/button";
 
-type ApiResponse = {
-  success: boolean;
-  message?: string;
-  data?: unknown;
-};
+type ApiResponse = object;
 
 export default function MyComponent() {
   const { fetchWithPayment, isPending } = useFetchWithPayment(client);
@@ -21,9 +17,9 @@ export default function MyComponent() {
     setError(null);
 
     try {
-      const response = await fetchWithPayment<ApiResponse>("/api", {
+      const response = await fetchWithPayment("/api", {
         method: "GET",
-      });
+      }) as ApiResponse | null;
 
       setData(response);
       console.log(response);
