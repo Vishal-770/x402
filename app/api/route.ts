@@ -1,13 +1,10 @@
-import { createThirdwebClient } from "thirdweb";
+
 import { facilitator, settlePayment } from "thirdweb/x402";
 import { sepolia } from "thirdweb/chains";
+import serverClient from "../server-client";
 
-const client = createThirdwebClient({
-  secretKey:
-    "aZ-XNYnB7aT-KkgpKZN9U0dVKChaDzmGVJ4REp0qud7PwHvWPfeZhBkLPLcBKvEMDfvpC5cVzqc2usQ0SWPQqA",
-});
 const thirdwebX402Facilitator = facilitator({
-  client,
+  client: serverClient,
   serverWalletAddress: "0x0CfB00Dc12f550D47A511Bb98B9fAE1D1240dcbA",
 });
 
@@ -26,7 +23,7 @@ export async function GET(request: Request) {
     price: {
       amount: "10000",
       asset: {
-        address: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+        address: "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238", // USDC ADDRESS ON SEPOLIA
       },
     },
     facilitator: thirdwebX402Facilitator,
